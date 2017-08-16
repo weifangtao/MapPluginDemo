@@ -1,5 +1,5 @@
 {
-  "name": "cld-cordova-map",
+  "name": "cld_cordova_map",
   "version": "1.0.0",
   "description": "cld cordova map",
   "cordova": {
@@ -17,7 +17,7 @@
     "cordova-android"
   ],
   "author": "weift",
-  "license": "ISC",
+  "license": "weift",
   "bugs": {
     "url": "https://github.com/weifangtao/MapPluginDemo/issues"
   },
