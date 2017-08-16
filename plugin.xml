@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.zhaoying.GaoDeLocation" 
+	version="1.0.0" 
+	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>GaoDeLocation</name>
+	<js-module name="GaoDeLocation" src="www/GaoDeLocation.js">
+		<clobbers target="cordova.plugins.GaoDeLocation" />
+	
+	</js-module><platform name="android">
+	<config-file parent="/*" target="res/xml/config.xml">
+		<feature name="GaoDeLocation">
+			<param name="android-package" value="com.zhaoying.GaoDeLocation.GaoDeLocation" />
+		</feature>
+	</config-file>
+
+	 <!--以下配置完全按照高德的指南进行配置，详见：http://lbs.amap.com/api/android-location-sdk/gettingstarted/-->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <!--在AndroidManifest.xml的application标签中配置Key：-->
+            <meta-data android:name="com.cld.lbsapi.API_KEY" android:value="$API_KEY">
+            </meta-data>
+           
+        </config-file>
+
+	<config-file parent="/*" target="AndroidManifest.xml">
+		<!-- 允许程序挂载和反挂载文件系统可移动存储 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 允许程序在外置存储中写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序读取所有者数据的权限 -->
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <!-- 允许程序写入但不读取所有者数据 -->
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <!-- 允许程序访问GPS位置信息 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 允许程序读取设备信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许使用PowerManager的 WakeLocks保持进程在休眠时从屏幕消失 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 允许程序访问网络 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序访问Wi-Fi网络状态信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <!-- 允许程序访问有关GSM网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 允许程序读取底层系统日志文件 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- SDK 2.3 需要 android.permission.WRITE_SETTINGS 权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 获取任务权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+
+	</config-file>
+	<source-file src="src/android/GaoDeLocation.java" target-dir="src/com/zhaoying/GaoDeLocation" />
+	<source-file src="libs/android/cldnavimapsdk_v2.1.4.jar" target-dir="libs" />
+	<source-file src="libs/android/armeabi/libcldbase.so" target-dir="libs/armeabi" />
+	<source-file src="libs/android/armeabi/libhmi_facade_android.so" target-dir="libs/armeabi" />
+	<source-file src="libs/android/armeabi/libhmi_opengl_android.so" target-dir="libs/armeabi" />
+	<source-file src="libs/android/armeabi/libhmi_package_android.so" target-dir="libs/armeabi" />
+	<source-file src="libs/android/armeabi/libkclan_jni.so" target-dir="libs/armeabi" />
+	<source-file src="libs/android/armeabi/libnavicm_misc_v1.0.so" target-dir="libs/armeabi" />
+	<source-file src="libs/android/armeabi/libnavione.so" target-dir="libs/armeabi" />
+</platform>
+</plugin>

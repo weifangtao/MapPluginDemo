@@ -1,0 +1,25 @@
+{
+  "name": "cld_cordova_map",
+  "version": "1.0.0",
+  "description": "cld cordova map",
+  "cordova": {
+    "id": "com.zhaoying.GaoDeLocation",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weifangtao/MapPluginDemo.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "weift",
+  "license": "weift",
+  "bugs": {
+    "url": "https://github.com/weifangtao/MapPluginDemo/issues"
+  },
+  "homepage": "https://github.com/weifangtao/MapPluginDemo#readme"
+}
